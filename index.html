@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <link rel="stylesheet" href="./assets/style/style.css">
+  <link rel="shortcut icon" href="./assets/img/icons/1.svg" type="image/svg">
+  <title>Registration form</title>
+</head>
+
+<body>
+  <h1>Введите ваши данные</h1>
+  <form name="regForm" novalidate>
+    <div>
+      <input type="text" id="name" placeholder="Имя" required>
+    </div>
+
+    <div>
+      <input type="email" id="email" placeholder="Электронная почта" required>
+    </div>
+
+    <div>
+      <input type="number" id="age" min=1 max=100 placeholder="Возраст" required>
+    </div>
+
+    <div>
+      <label class="form__text">Ваш пол:&nbsp;&nbsp;</label>
+      <input type="radio" id="male" name="gender" value="option1"> 
+      <label for="male">Мужской</label>
+      
+      <input type="radio" id="female" name="gender" value="option2"> 
+      <label for="female">Женский</label>
+    </div>
+
+    <div>
+      <label for="profession" class="form__text">Профессия:&nbsp;&nbsp;</label>
+      <select id="profession" placeholder="Профессия" required>
+        <option value="" disabled selected>Выберите профессию</option>
+        <option value="prof1">Инженер</option>
+        <option value="prof2">Дизайнер</option>
+        <option value="prof3">Программист</option>
+        <option value="prof4">Учитель</option>
+        <option value="prof5">Врач</option>
+        <option value="prof6">Продавец</option>
+        <option value="prof7">Другое</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="pass" class="form__text">Пароль:&nbsp;&nbsp;</label>
+      <input type="password" id="pass" placeholder="Пароль" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+    </div>
+
+    <div>
+      <label class="form__text">Согласие с обработкой персональных данных:&nbsp;&nbsp;</label>
+      <input type="checkbox" class="form__input" required>
+    </div>
+
+    <div>
+      <button type="submit" class="form__button" onclick=checkAll()>Отправить</button>
+    </div>
+
+    <div id="errorMessage"></div>
+  </form>
+
+
+  <script src="./assets/script/index.js"></script>
+</body>
+</html>
